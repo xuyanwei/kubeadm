@@ -1,1 +1,6 @@
 helm init --stable-repo-url=https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts --tiller-tls-cert=/etc/kubernetes/ssl/apiserver-kubelet-client.crt --tiller-tls-key=/etc/kubernetes/ssl/apiserver-kubelet-client.key
+
+openssl genrsa -out apiserver-kubelet-client.key 2048
+openssl req -new -key apiserver-kubelet-client.key -out apiserver-kubelet-client.csr -set_serial 0 -subj "/CN=$ip"
+openssl x509 -req -days 20000 -in apiserver-kubelet-client.csr -signkey ca.key -CA ca.crt -out apiserver-kubelet-client.crt -extensions v3_ca
+mv apiserver-kubelet-client.* /etc/kubernetes/ssl
