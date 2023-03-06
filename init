@@ -2,3 +2,5 @@ kubeadm init --kubernetes-version=1.18.0 \
 --apiserver-advertise-address=0.0.0.0 \
 --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers \
 --token-ttl 0
+
+kubeadm join 192.168.10.185:6443 --token ljr1yn.p98tlanek2ovzmiy --discovery-token-ca-cert-hash sha256:c319dffa99aea9c093ce479bdc254968d54a75c8fb8a8e167f34229b0e6d228e
