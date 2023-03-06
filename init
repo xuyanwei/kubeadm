@@ -1,0 +1,4 @@
+kubeadm init --kubernetes-version=1.18.0 \
+--apiserver-advertise-address=0.0.0.0 \
+--image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers \
+--token-ttl 0
