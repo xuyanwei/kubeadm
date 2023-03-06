@@ -1,0 +1,3 @@
+curl https://ip:6443/apis/apps/v1/namespaces/default/deployments --cacert /etc/kubernetes/ssl/ca.crt \
+--key /etc/kubernetes/ssl/apiserver-kubelet-client.key \
+--cert /etc/kubernetes/ssl/apiserver-kubelet-client.crt
